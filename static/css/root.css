@@ -49,3 +49,57 @@ body {
   background-color: var(--color-dark);
   color: var(--color-light);
 }
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Good Sans Bold;
+}
+p {
+  font-family: Good Sans Regular;
+}
+a {
+  font-family: Good Sans Regular;
+  text-decoration: none;
+}
+
+/* Button */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background: linear-gradient(
+    -45deg,
+    var(--color-primary),
+    var(--color-secondary) 45%,
+    var(--color-primary)
+  );
+  background-size: 150%;
+  color: var(--color-light);
+  border-radius: 100px;
+  font-family: Good Sans Black;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+.button:hover {
+  background-position: 100%;
+}
+.button i {
+  font-size: 18px;
+}

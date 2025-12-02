@@ -1,1 +1,17 @@
 @import "./root.css";
+
+/* Navigation */
+.navigation {
+  background-color: var(--color-dark);
+  padding: 20px 0;
+}
+.navigation .navbar-brand {
+  width: 250px;
+  display: inline-block;
+}
+
+/* Hero Section */
+.hero {
+  background-color: var(--color-primary);
+  min-height: calc(100vh - 91px);
+}
