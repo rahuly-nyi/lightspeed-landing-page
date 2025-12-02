@@ -1,0 +1,51 @@
+/* Fonts */
+@font-face {
+  font-family: Good Sans Light;
+  font-weight: 300;
+  src: url("../fonts/good-sans/light.otf");
+  font-display: swap;
+}
+@font-face {
+  font-family: Good Sans Regular;
+  font-weight: 500;
+  src: url("../fonts/good-sans/regular.otf");
+  font-display: swap;
+}
+@font-face {
+  font-family: Good Sans Bold;
+  font-weight: 700;
+  src: url("../fonts/good-sans/bold.otf");
+  font-display: swap;
+}
+@font-face {
+  font-family: Good Sans Black;
+  font-weight: 900;
+  src: url("../fonts/good-sans/black.otf");
+  font-display: swap;
+}
+
+/* Variables */
+:root {
+  /* Fonts */
+  --font-light: "Good Sans Light", sans-serif;
+  --font-regular: "Good Sans Regular", sans-serif;
+  --font-bold: "Good Sans Bold", sans-serif;
+  --font-black: "Good Sans Black", sans-serif;
+
+  /* Colors */
+  --color-primary: #d38cea;
+  --color-secondary: #767bd2;
+  --color-dark: #19191b;
+  --color-light: #ffffff;
+}
+
+*,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Good Sans Regular;
+}
+body {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
