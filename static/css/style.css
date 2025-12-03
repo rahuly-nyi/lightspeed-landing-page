@@ -78,14 +78,6 @@
   color: var(--color-light);
   text-shadow: var(--text-shadow);
 }
-@keyframes scroll {
-  0% {
-    transform: translateX(calc(-400px * 6));
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
 .footer .info-section {
   background-color: var(--color-dark);
   padding: 100px 0;
@@ -190,11 +182,11 @@
   );
   z-index: -1;
   opacity: 0;
-  filter: blur(10px);
+  filter: blur(7px);
   transition: all 0.5s ease;
 }
 .faq-section .accordion-item-wrapper:hover::before {
-  opacity: 0.5;
+  opacity: 0.7;
 }
 .faq-section .accordion-item-wrapper:last-child {
   margin-bottom: 0;
@@ -222,4 +214,122 @@
 }
 .faq-section .accordion-body p {
   font-size: 20px;
+}
+
+/* Steps Section */
+.steps-section .steps {
+  padding: 10px 0;
+  position: relative;
+}
+.steps-section .steps .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin: 50px 0;
+}
+.steps-section .steps .item:first-child {
+  margin-top: 0;
+}
+.steps-section .steps .item:last-child {
+  margin-bottom: 0;
+}
+.steps-section .steps .item h6 {
+  font-size: 20px;
+  font-family: Good Sans Regular;
+  color: var(--color-light);
+  text-shadow: var(--text-shadow);
+}
+.steps-section .steps .item .icon-wrapper {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.steps-section .steps .item .icon-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  background: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0;
+  filter: blur(10px);
+  transition: all 0.5s ease;
+  animation: scale 10s linear infinite;
+}
+.steps-section .steps .item .icon-wrapper:hover::before {
+  opacity: 0.5;
+}
+.steps-section .steps .item .icon-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 100%;
+  background: var(--color-light);
+  opacity: 0.5;
+}
+.steps-section .steps .item:last-child .icon-wrapper:after {
+  display: none;
+}
+.steps-section .steps .item .icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background-color: var(--color-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+.steps-section .steps .item .icon img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  object-position: center;
+}
+.steps-section .steps .item .text {
+  flex: 1;
+  background: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  padding: 20px;
+  min-height: 130px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.steps-section .steps .item .text h5 {
+  font-size: 22px;
+  font-family: Good Sans Bold;
+  color: var(--color-light);
+}
+.steps-section .steps .item .text p {
+  font-size: 20px;
+  font-family: Good Sans Regular;
+  color: var(--color-light);
 }
