@@ -206,6 +206,31 @@ a {
     transform: translate(-50%, -50%) scale(1.2);
   }
 }
+@keyframes float {
+  0% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-10px);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+@keyframes floatAlternate {
+  0% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-10px);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+}
 @keyframes rotateGradient {
   to {
     background: linear-gradient(
@@ -229,7 +254,7 @@ a {
   }
 }
 
-/* Glow */
+/* Patterns */
 .glow {
   --color: var(--color-secondary);
   position: absolute;
@@ -244,4 +269,21 @@ a {
   );
   filter: blur(100px);
   opacity: 0.5;
+  z-index: -1;
+  pointer-events: none;
+}
+.dot {
+  --color: var(--color-secondary);
+  --size: 20px;
+  --animation: float;
+
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background-color: var(--color);
+  box-shadow: 0 0 var(--size) var(--color);
+  z-index: 1;
+  animation: var(--animation) 5s ease-in-out infinite;
+  pointer-events: none;
 }

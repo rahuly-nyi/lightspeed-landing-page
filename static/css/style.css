@@ -356,10 +356,73 @@
 .footer .info-section .details p img {
   width: 130px;
 }
+.footer .cta-section .dot:nth-child(1) {
+  bottom: 100px;
+  left: 100px;
+  --color: var(--color-primary);
+  --size: 20px;
+  --animation: floatAlternate;
+}
+.footer .cta-section .dot:nth-child(2) {
+  bottom: 160px;
+  left: 150px;
+  --color: var(--color-primary);
+  --size: 10px;
+  --animation: float;
+}
+.footer .cta-section .dot:nth-child(3) {
+  bottom: 250px;
+  left: 120px;
+  --color: var(--color-primary);
+  --size: 5px;
+  --animation: floatAlternate;
+}
+.footer .cta-section .dot:nth-child(4) {
+  top: 250px;
+  right: 50px;
+  --color: var(--color-secondary);
+  --size: 20px;
+  --animation: float;
+}
+.footer .cta-section .dot:nth-child(5) {
+  top: 00px;
+  right: 100px;
+  --color: var(--color-secondary);
+  --size: 20px;
+  --animation: floatAlternate;
+}
+.footer .cta-section .dot:nth-child(6) {
+  top: 50px;
+  right: 200px;
+  --color: var(--color-secondary);
+  --size: 10px;
+  --animation: float;
+}
+.footer .cta-section .dot:nth-child(7) {
+  top: 100px;
+  right: 150px;
+  --color: var(--color-secondary);
+  --size: 5px;
+  --animation: floatAlternate;
+}
 
 /* FAQ Section */
 .faq-section {
   position: relative;
+}
+.faq-section .dot:nth-child(1) {
+  top: 100px;
+  left: 150px;
+  --color: var(--color-secondary);
+  --size: 20px;
+  --animation: float;
+}
+.faq-section .dot:nth-child(2) {
+  top: 100px;
+  left: 350px;
+  --color: var(--color-secondary);
+  --size: 20px;
+  --animation: float;
 }
 .faq-section .glow:nth-child(1) {
   top: -100px;
