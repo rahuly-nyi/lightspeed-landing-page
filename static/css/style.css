@@ -333,3 +333,71 @@
   font-family: Good Sans Regular;
   color: var(--color-light);
 }
+
+/* Points Section */
+.points-section .card {
+  border: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  padding: 2px;
+  height: 100%;
+}
+.points-section .card .card-body {
+  background: var(--color-dark);
+  border-radius: 10px;
+  padding: 50px 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 30px;
+  transition: all 0.5s ease;
+}
+.points-section .card:hover .card-body {
+  background: transparent;
+}
+.points-section .card .card-body .icon {
+  width: 100px;
+  height: 50px;
+  position: relative;
+}
+.points-section .card .card-body .icon img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  z-index: 1;
+  transition: all 0.5s ease;
+}
+.points-section .card:hover .card-body .icon img:last-child {
+  opacity: 0;
+}
+.points-section .card .card-body .text {
+  flex: 1;
+  border-radius: 10px;
+}
+.points-section .card .card-body .text h5 {
+  font-size: 22px;
+  font-family: Good Sans Regular;
+  color: var(--color-light);
+  margin-bottom: 15px;
+}
+.points-section .card .card-body .text h6 {
+  font-size: 26px;
+  font-family: Good Sans Bold;
+  color: var(--color-light);
+  margin-bottom: 15px;
+}
+.points-section .card .card-body .text p {
+  font-size: 22px;
+  font-family: Good Sans Light;
+  color: var(--color-light);
+}
