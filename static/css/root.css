@@ -104,7 +104,7 @@ a {
   border-radius: 100px;
   font-family: Good Sans Black;
   font-size: 14px;
-  text-transform: capitalize;
+  text-transform: uppercase;
   letter-spacing: 0.05em;
   text-align: center;
   text-decoration: none;
@@ -284,6 +284,6 @@ a {
   background-color: var(--color);
   box-shadow: 0 0 var(--size) var(--color);
   z-index: 1;
-  animation: blink 1s ease-in-out infinite;
+  animation: blink 3s ease-in-out infinite;
   pointer-events: none;
 }

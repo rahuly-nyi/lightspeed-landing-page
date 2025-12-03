@@ -1,7 +1,7 @@
 // Initialize AOS
 AOS.init({
   duration: 1000,
-  //   once: true,
+  once: true,
   offset: 100,
   delay: 100,
   easing: "ease-in-out",
@@ -14,42 +14,22 @@ AOS.init({
 // Initialize Stats
 function runDigitCounter({
   selector = ".stats .item span",
-  duration = 3000,
-  maxItems = 150,
+  duration = 3,
 } = {}) {
-  const digits = Array.from(document.querySelectorAll(selector));
+  document.querySelectorAll(selector).forEach((span) => {
+    const target = Number(span.textContent);
+    if (isNaN(target)) return;
 
-  if (digits.length === 0) return;
-  if (digits.length > maxItems) {
-    console.warn(`Max allowed items is ${maxItems}`);
-    return;
-  }
-
-  digits.forEach((span) => {
-    const target = parseInt(span.textContent, 10);
-
-    if (isNaN(target) || target < 0 || target > 9) {
-      console.warn("Each span must contain a single digit (0–9)");
-      return;
-    }
-
-    let start = 0;
-    const startTime = performance.now();
-
-    function update(currentTime) {
-      const progress = Math.min((currentTime - startTime) / duration, 1);
-      const value = Math.floor(progress * target);
-
-      span.textContent = value;
-
-      if (progress < 1) {
-        requestAnimationFrame(update);
-      } else {
-        span.textContent = target;
+    gsap.fromTo(
+      span,
+      { innerText: 0 },
+      {
+        innerText: target,
+        duration,
+        ease: "power3.out",
+        snap: { innerText: 1 },
       }
-    }
-
-    requestAnimationFrame(update);
+    );
   });
 }
 
@@ -64,7 +44,7 @@ gsap.to(".step-1", {
     trigger: ".step-1",
     start: "top 15%",
     end: "bottom 15%",
-    markers: true,
+    markers: false,
     scrub: true,
   },
 });
@@ -75,7 +55,7 @@ gsap.to(".step-2", {
     trigger: ".step-2",
     start: "top 15%",
     end: "bottom 15%",
-    markers: true,
+    markers: false,
     scrub: true,
   },
 });
@@ -86,18 +66,18 @@ gsap.to(".step-3", {
     trigger: ".step-3",
     start: "top 15%",
     end: "bottom 15%",
-    markers: true,
+    markers: false,
     scrub: true,
   },
 });
 gsap.to(".step-4", {
-  y: 100,
+  scale: 0.7,
   opacity: 0,
   scrollTrigger: {
     trigger: ".step-4",
     start: "top 15%",
     end: "bottom 15%",
-    markers: true,
+    markers: false,
     scrub: true,
   },
 });
