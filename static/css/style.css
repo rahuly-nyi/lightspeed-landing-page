@@ -162,6 +162,20 @@
 .about {
   position: relative;
 }
+.about .dot.dot-1 {
+  top: 200px;
+  right: 50px;
+  --color: var(--color-secondary);
+  --size: 20px;
+  --animation: floatAlternate;
+}
+.about .dot.dot-2 {
+  top: 100px;
+  right: 50px;
+  --color: var(--color-secondary);
+  --size: 10px;
+  --animation: float;
+}
 .about .glow {
   top: -500px;
   right: -700px;
@@ -410,18 +424,25 @@
 .faq-section {
   position: relative;
 }
-.faq-section .dot:nth-child(1) {
-  top: 100px;
+.faq-section .dot.dot-1 {
+  top: 300px;
   left: 150px;
   --color: var(--color-secondary);
   --size: 20px;
   --animation: float;
 }
-.faq-section .dot:nth-child(2) {
-  top: 100px;
-  left: 350px;
+.faq-section .dot.dot-2 {
+  top: 400px;
+  left: 100px;
   --color: var(--color-secondary);
-  --size: 20px;
+  --size: 10px;
+  --animation: float;
+}
+.faq-section .dot.dot-3 {
+  top: 0;
+  left: 50px;
+  --color: var(--color-secondary);
+  --size: 30px;
   --animation: float;
 }
 .faq-section .glow:nth-child(1) {
@@ -516,6 +537,27 @@
 .steps-section .steps {
   padding: 10px 0;
   position: relative;
+}
+.steps-section .dot.dot-1 {
+  top: 300px;
+  right: 50px;
+  --color: var(--color-primary);
+  --size: 20px;
+  --animation: floatAlternate;
+}
+.steps-section .dot.dot-2 {
+  top: 400px;
+  right: 100px;
+  --color: var(--color-primary);
+  --size: 10px;
+  --animation: float;
+}
+.steps-section .dot.dot-3 {
+  top: 200px;
+  right: 100px;
+  --color: var(--color-primary);
+  --size: 40px;
+  --animation: floatAlternate;
 }
 .steps-section .steps .item {
   display: flex;
@@ -631,6 +673,27 @@
 }
 
 /* Points Section */
+.points-section .dot.dot-1 {
+  top: 240px;
+  left: 50px;
+  --color: var(--color-secondary);
+  --size: 5px;
+  --animation: floatAlternate;
+}
+.points-section .dot.dot-2 {
+  top: 300px;
+  left: 50px;
+  --color: var(--color-secondary);
+  --size: 10px;
+  --animation: float;
+}
+.points-section .dot.dot-3 {
+  top: 200px;
+  left: 100px;
+  --color: var(--color-secondary);
+  --size: 20px;
+  --animation: floatAlternate;
+}
 .points-section .card {
   border: 0;
   border-radius: 10px;
