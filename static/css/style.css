@@ -21,18 +21,88 @@
   font-family: Good Sans Regular;
   font-size: 22px;
 }
-.about .object {
+.about .image-wrapper {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+.about .image-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 35px;
+  left: -35px;
+  width: 70px;
+  height: 70px;
+  background: var(--color-secondary);
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(10px);
+  opacity: 0.5;
+  transition: all 0.5s ease;
+}
+.about .image-wrapper .image-container {
   position: relative;
   width: 100%;
   height: 100%;
+  text-align: center;
+  z-index: 1;
 }
-.about .object img {
+.about .image-wrapper {
+  --angle: 45deg;
+}
+.about .image-wrapper .image-container::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 77%;
+  border-radius: 10px;
+  z-index: 0;
+  background: linear-gradient(
+    var(--angle),
+    var(--color-secondary),
+    var(--color-primary),
+    var(--color-dark),
+    var(--color-dark)
+  );
+  background-size: 100%;
+  transition: background 0.5s ease;
+}
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 45deg;
+  inherits: true;
+}
+.about .image-wrapper:hover {
+  --angle: 405deg;
+}
+.about .image-wrapper {
+  transition: --angle 1s ease;
+}
+.about .image-wrapper .image-container::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 4px);
+  height: calc(77% - 4px);
+  background-color: var(--color-dark);
+  z-index: 1;
+  border-radius: 10px;
+}
+.about .image-wrapper .image-container img {
   width: 100%;
   object-fit: contain;
   object-position: bottom;
+  position: relative;
+  z-index: 2;
 }
-.about .object img:last-child {
-  width: 100px;
+.about .image-wrapper img {
+  width: 150px;
+  margin: 20px auto 0;
 }
 
 /* Footer Section */
