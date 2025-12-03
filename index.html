@@ -11,12 +11,13 @@
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link href="./static/css//bootstrap.min.css" rel="stylesheet" />
     <link href="./static/css/style.css" rel="stylesheet" />
   </head>
   <body>
     <!-- Navigation -->
-    <nav class="navbar navigation">
+    <nav class="navbar navigation" data-aos="fade-down">
       <div class="container">
         <a class="navbar-brand" href="/">
           <img src="./static/images/logo.png" alt="Lightspeed" />
@@ -31,64 +32,73 @@
 
     <!-- Hero Section -->
     <section class="hero">
-      <video src="./static/images/hero.mp4" autoplay muted loop></video>
+      <video
+        src="./static/images/hero.mp4"
+        autoplay
+        muted
+        loop
+        data-aos="fade-in"
+        data-aos-delay="500"
+      ></video>
 
       <div class="container">
-        <div class="gradient-border-badge mb-5">
-          <div class="content">
-            <i></i>
-            <span>Applications Open</span>
+        <div data-aos="fade-up">
+          <div class="gradient-border-badge mb-5">
+            <div class="content">
+              <i></i>
+              <span>Applications Open</span>
+            </div>
           </div>
-        </div>
 
-        <div class="title">
-          <img src="./static/images/hero-text.png" alt="India Ascend 2026" />
-          <p class="mt-4">
-            <span>by</span>
-            <img src="./static/images/logo.png" alt="Lightspeed" />
-          </p>
-        </div>
-        <h4 class="sub-heading mt-5">
-          Calling India's boldest under-25 founders building R&D-first companies
-          for the world.
-        </h4>
+          <div class="title">
+            <img src="./static/images/hero-text.png" alt="India Ascend 2026" />
+            <p class="mt-4">
+              <span>by</span>
+              <img src="./static/images/logo.png" alt="Lightspeed" />
+            </p>
+          </div>
+          <h4 class="sub-heading mt-5">
+            Calling India's boldest under-25 founders building R&D-first
+            companies for the world.
+          </h4>
 
-        <div class="text-center my-5">
-          <a href="#" class="button button-lg">
-            <i class="fal fa-thin fa-rocket"></i>
-            <span>Apply Now</span>
-          </a>
-        </div>
+          <div class="text-center my-5">
+            <a href="#" class="button button-lg">
+              <i class="fal fa-thin fa-rocket"></i>
+              <span>Apply Now</span>
+            </a>
+          </div>
 
-        <div class="stats mb-3">
-          <div class="item">
-            <span>0</span>
+          <div class="stats mb-3">
+            <div class="item">
+              <span>0</span>
+            </div>
+            <div class="item">
+              <span>8</span>
+            </div>
+            <div class="item">
+              <span>4</span>
+            </div>
           </div>
-          <div class="item">
-            <span>8</span>
-          </div>
-          <div class="item">
-            <span>4</span>
-          </div>
+          <h4 class="sub-heading">Bold ideas submitted - add yours!</h4>
         </div>
-        <h4 class="sub-heading">Bold ideas submitted - add yours!</h4>
       </div>
     </section>
 
     <!-- About Section -->
     <section class="section about pb-0">
       <div class="container">
-        <h1 class="heading mb-5">
+        <h1 class="heading mb-5" data-aos="fade-up">
           THE NEXT DECADE BELONGS TO THE OUTLIERS. <br />
           THE COURAGEOUS. THE IMPOSSIBLE THINKERS.
         </h1>
         <div class="row g-4 align-items-center">
           <div class="col-lg-6">
-            <p class="mb-4">
+            <p class="mb-4" data-aos="fade-up">
               India Ascend is for bold 18-25-year-old founders already building
               the future from hostel rooms, labs, and maker spaces.
             </p>
-            <p>
+            <p data-aos="fade-up">
               Whether you're designing propulsion engines, training frontier AI
               models, disrupting manufacturing, or reimagining energy, and
               climate - this is for people who see the world differently and are
@@ -98,53 +108,61 @@
           <div class="col-lg-6">
             <div class="row gx-5 gy-4 justify-content-center">
               <div class="col-5">
-                <div class="image-wrapper">
-                  <div class="image-container">
-                    <img
-                      src="./static/images/about/pixel-card.png"
-                      alt="Pixel"
-                    />
+                <div data-aos="fade-up" data-aos-delay="200">
+                  <div class="image-wrapper">
+                    <div class="image-container">
+                      <img
+                        src="./static/images/about/pixel-card.png"
+                        alt="Pixel"
+                      />
+                    </div>
+                    <img src="./static/images/about/pixel.png" alt="Pixel" />
                   </div>
-                  <img src="./static/images/about/pixel.png" alt="Pixel" />
                 </div>
               </div>
               <div class="col-5">
-                <div class="image-wrapper">
-                  <div class="image-container">
+                <div data-aos="fade-up" data-aos-delay="400">
+                  <div class="image-wrapper">
+                    <div class="image-container">
+                      <img
+                        src="./static/images/about/airbound-card.png"
+                        alt="Airbound"
+                      />
+                    </div>
                     <img
-                      src="./static/images/about/airbound-card.png"
+                      src="./static/images/about/airbound.png"
                       alt="Airbound"
                     />
                   </div>
-                  <img
-                    src="./static/images/about/airbound.png"
-                    alt="Airbound"
-                  />
                 </div>
               </div>
               <div class="col-5">
-                <div class="image-wrapper">
-                  <div class="image-container">
+                <div data-aos="fade-up" data-aos-delay="600">
+                  <div class="image-wrapper">
+                    <div class="image-container">
+                      <img
+                        src="./static/images/about/exponent-card.png"
+                        alt="Exponent"
+                      />
+                    </div>
                     <img
-                      src="./static/images/about/exponent-card.png"
+                      src="./static/images/about/exponent.png"
                       alt="Exponent"
                     />
                   </div>
-                  <img
-                    src="./static/images/about/exponent.png"
-                    alt="Exponent"
-                  />
                 </div>
               </div>
               <div class="col-5">
-                <div class="image-wrapper">
-                  <div class="image-container">
-                    <img
-                      src="./static/images/about/zepto-card.png"
-                      alt="Zepto"
-                    />
+                <div data-aos="fade-up" data-aos-delay="800">
+                  <div class="image-wrapper">
+                    <div class="image-container">
+                      <img
+                        src="./static/images/about/zepto-card.png"
+                        alt="Zepto"
+                      />
+                    </div>
+                    <img src="./static/images/about/zepto.png" alt="Zepto" />
                   </div>
-                  <img src="./static/images/about/zepto.png" alt="Zepto" />
                 </div>
               </div>
             </div>
@@ -157,10 +175,14 @@
     <section class="section points-section pb-0">
       <div class="container">
         <div class="text-center">
-          <h2 class="heading mb-3">
+          <h2 class="heading mb-3" data-aos="fade-up">
             PRECISION BACKING FOR NON-LINEAR AMBITION
           </h2>
-          <h4 class="text-center sub-heading mb-5">
+          <h4
+            class="text-center sub-heading mb-5"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
             Top three teams get what they need to go from idea → prototype →
             company
           </h4>
@@ -168,7 +190,7 @@
 
         <div class="row g-5">
           <div class="col-md-6">
-            <div class="card">
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
               <div class="card-body">
                 <div class="icon">
                   <img
@@ -188,7 +210,7 @@
             </div>
           </div>
           <div class="col-md-6">
-            <div class="card">
+            <div class="card" data-aos="fade-up" data-aos-delay="400">
               <div class="card-body">
                 <div class="icon">
                   <img
@@ -209,7 +231,7 @@
             </div>
           </div>
           <div class="col-md-6">
-            <div class="card">
+            <div class="card" data-aos="fade-up" data-aos-delay="600">
               <div class="card-body">
                 <div class="icon">
                   <img
@@ -230,7 +252,7 @@
             </div>
           </div>
           <div class="col-md-6">
-            <div class="card">
+            <div class="card" data-aos="fade-up" data-aos-delay="800">
               <div class="card-body">
                 <div class="icon">
                   <img
@@ -261,13 +283,17 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-10">
-            <h2 class="heading mb-3">WHAT TO EXPECT</h2>
-            <h4 class="text-center sub-heading mb-5">
+            <h2 class="heading mb-3" data-aos="fade-up">WHAT TO EXPECT</h2>
+            <h4
+              class="text-center sub-heading mb-5"
+              data-aos="fade-up"
+              data-aos-delay="500"
+            >
               From Application to Acceleration
             </h4>
 
             <div class="steps">
-              <div class="item">
+              <div class="item" data-aos="fade-up" data-aos-delay="1000">
                 <h6>Step 1</h6>
                 <div class="icon-wrapper">
                   <div class="icon">
@@ -284,7 +310,7 @@
                 </div>
               </div>
 
-              <div class="item">
+              <div class="item" data-aos="fade-up" data-aos-delay="1200">
                 <h6>Step 2</h6>
                 <div class="icon-wrapper">
                   <div class="icon">
@@ -303,7 +329,7 @@
                 </div>
               </div>
 
-              <div class="item">
+              <div class="item" data-aos="fade-up" data-aos-delay="1400">
                 <h6>Step 3</h6>
                 <div class="icon-wrapper">
                   <div class="icon">
@@ -322,7 +348,7 @@
                 </div>
               </div>
 
-              <div class="item">
+              <div class="item" data-aos="fade-up" data-aos-delay="1600">
                 <h6>Step 4</h6>
                 <div class="icon-wrapper">
                   <div class="icon">
@@ -348,10 +374,14 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-10">
-            <h2 class="heading mb-5">FAQs</h2>
+            <h2 class="heading mb-5" data-aos="fade-up">FAQs</h2>
             <div class="accordion accordion-flush" id="faqAccordion">
               <!-- Item 1 -->
-              <div class="accordion-item-wrapper">
+              <div
+                class="accordion-item-wrapper"
+                data-aos="fade-up"
+                data-aos-delay="1000"
+              >
                 <div class="accordion-item">
                   <button
                     class="accordion-button collapsed"
@@ -381,7 +411,11 @@
               </div>
 
               <!-- Item 2 -->
-              <div class="accordion-item-wrapper">
+              <div
+                class="accordion-item-wrapper"
+                data-aos="fade-up"
+                data-aos-delay="1200"
+              >
                 <div class="accordion-item">
                   <button
                     class="accordion-button collapsed"
@@ -411,7 +445,11 @@
               </div>
 
               <!-- Item 3 -->
-              <div class="accordion-item-wrapper">
+              <div
+                class="accordion-item-wrapper"
+                data-aos="fade-up"
+                data-aos-delay="1400"
+              >
                 <div class="accordion-item">
                   <button
                     class="accordion-button collapsed"
@@ -440,7 +478,11 @@
               </div>
 
               <!-- Item 4 -->
-              <div class="accordion-item-wrapper">
+              <div
+                class="accordion-item-wrapper"
+                data-aos="fade-up"
+                data-aos-delay="1600"
+              >
                 <div class="accordion-item">
                   <button
                     class="accordion-button collapsed"
@@ -471,7 +513,11 @@
               </div>
 
               <!-- Item 5 -->
-              <div class="accordion-item-wrapper">
+              <div
+                class="accordion-item-wrapper"
+                data-aos="fade-up"
+                data-aos-delay="1800"
+              >
                 <div class="accordion-item">
                   <button
                     class="accordion-button collapsed"
@@ -511,12 +557,14 @@
     <footer class="footer">
       <section class="section cta-section">
         <div class="container">
-          <h3 class="text-center heading mb-4">
+          <h3 class="text-center heading mb-4" data-aos="fade-up">
             BUILD THE COMPANY <br />
             THE WORLD CAN'T IMAGINE YET
           </h3>
-          <h4 class="sub-heading text-center mb-10">We'll see it with you</h4>
-          <div class="text-center">
+          <h4 class="sub-heading text-center mb-10" data-aos="fade-up">
+            We'll see it with you
+          </h4>
+          <div class="text-center" data-aos="fade-up" data-aos-delay="2000">
             <a href="#" class="button button-lg">
               <i class="fal fa-thin fa-rocket"></i>
               <span>Apply Now</span>
@@ -610,6 +658,8 @@
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./static/js/bootstrap.bundle.min.js"></script>
+    <script src="./static/js/app.js"></script>
   </body>
 </html>
