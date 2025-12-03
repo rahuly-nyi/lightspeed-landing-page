@@ -34,3 +34,113 @@
 .about .object img:last-child {
   width: 100px;
 }
+
+/* Footer Section */
+.footer .scroller {
+  width: 100%;
+  padding: 15px 0;
+  margin: auto;
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+}
+.footer .scroller .track {
+  display: flex;
+  width: calc(400px * 12);
+  animation: scroll 50s linear infinite;
+}
+.footer .scroller .item {
+  width: 400px;
+  overflow: hidden;
+  perspective: 100px;
+  cursor: default;
+  position: relative;
+}
+.footer .scroller .item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--color-light);
+}
+.footer .scroller .item h6 {
+  font-family: Good Sans Regular;
+  font-size: 22px;
+  text-align: center;
+  color: var(--color-light);
+  text-shadow: var(--text-shadow);
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(calc(-400px * 6));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.footer .info-section {
+  background-color: var(--color-dark);
+  padding: 100px 0;
+}
+.footer .info-section p {
+  font-family: Good Sans Regular;
+  font-size: 18px;
+  color: var(--color-light);
+  text-shadow: var(--text-shadow);
+}
+.footer .info-section a {
+  font-family: Good Sans Regular;
+  color: var(--color-light);
+  text-decoration: underline;
+  text-shadow: var(--text-shadow);
+  transition: all 0.5s ease;
+}
+.footer .info-section a:hover {
+  color: var(--color-primary);
+}
+.footer .info-section .social {
+  display: flex;
+  gap: 10px;
+}
+.footer .info-section .social a {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  border: 1px solid var(--color-light);
+  border-radius: 5px;
+  display: grid;
+  place-items: center;
+  transition: all 0.5s ease;
+}
+.footer .info-section .social a:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.footer .info-section .details {
+  text-align: right;
+}
+.footer .info-section .details img:first-child {
+  width: 100%;
+  max-width: 500px;
+}
+.footer .info-section .details p {
+  font-family: Good Sans Regular;
+  font-size: 18px;
+  color: var(--color-light);
+  text-shadow: var(--text-shadow);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.footer .info-section .details p img {
+  width: 130px;
+}
