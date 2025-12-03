@@ -577,6 +577,7 @@
   font-family: Good Sans Regular;
   color: var(--color-light);
   text-shadow: var(--text-shadow);
+  width: 100px;
 }
 .steps-section .steps .item .icon-wrapper {
   width: 100px;
@@ -616,20 +617,6 @@
 .steps-section .steps .item .icon-wrapper:hover::before {
   opacity: 0.5;
 }
-.steps-section .steps .item .icon-wrapper::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1px;
-  height: 100%;
-  background: var(--color-light);
-  opacity: 0.5;
-}
-.steps-section .steps .item:last-child .icon-wrapper:after {
-  display: none;
-}
 .steps-section .steps .item .icon {
   width: 96px;
   height: 96px;
@@ -648,7 +635,7 @@
   object-position: center;
 }
 .steps-section .steps .item .text {
-  flex: 1;
+  width: calc(100% - 260px);
   background: linear-gradient(
     to right,
     var(--color-secondary),
@@ -660,6 +647,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-shadow: var(--box-shadow);
 }
 .steps-section .steps .item .text h5 {
   font-size: 22px;
@@ -760,3 +748,13 @@
   font-family: Good Sans Light;
   color: var(--color-light);
 }
+
+/* Stacking */
+/* .steps {
+  position: relative;
+}
+.steps .item {
+  position: sticky;
+  top: 120px;
+  margin-bottom: 120px;
+} */

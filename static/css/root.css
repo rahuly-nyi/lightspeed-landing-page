@@ -41,7 +41,7 @@
 
   /* Shadows */
   --text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  --box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  --box-shadow: 0 0 10px 10px #00000024;
 }
 
 *,
@@ -284,6 +284,6 @@ a {
   background-color: var(--color);
   box-shadow: 0 0 var(--size) var(--color);
   z-index: 1;
-  animation: var(--animation) 5s ease-in-out infinite;
+  animation: blink 1s ease-in-out infinite;
   pointer-events: none;
 }
