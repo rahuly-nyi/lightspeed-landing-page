@@ -144,3 +144,82 @@
 .footer .info-section .details p img {
   width: 130px;
 }
+
+/* FAQ Section */
+.faq-section .accordion-item {
+  border-radius: 10px;
+  overflow: hidden;
+  outline: none;
+  border: 0;
+  background: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  padding: 2px;
+}
+.faq-section .accordion-item .accordion-button {
+  font-family: Good Sans Regular;
+  font-size: 20px;
+  color: var(--color-light);
+  text-shadow: var(--text-shadow);
+  background-color: var(--color-dark);
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  border-radius: 10px;
+  padding: 20px 20px;
+}
+.faq-section .accordion-item-wrapper {
+  margin-bottom: 30px;
+  position: relative;
+}
+.faq-section .accordion-item-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: calc(100% + 10px);
+  border-radius: 100%;
+  background: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  z-index: -1;
+  opacity: 0;
+  filter: blur(10px);
+  transition: all 0.5s ease;
+}
+.faq-section .accordion-item-wrapper:hover::before {
+  opacity: 0.5;
+}
+.faq-section .accordion-item-wrapper:last-child {
+  margin-bottom: 0;
+}
+.faq-section .accordion-button::after {
+  display: none;
+}
+.faq-section .accordion-button {
+  position: relative;
+  padding-right: 3rem;
+}
+.faq-section .accordion-button::before {
+  content: "";
+  position: absolute;
+  right: 1.25rem;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+}
+.faq-section .accordion-button:not(.collapsed)::before {
+  transform: rotate(-135deg);
+}
+.faq-section .accordion-body p {
+  font-size: 20px;
+}
