@@ -131,7 +131,6 @@ a {
   position: relative;
   z-index: 1;
   padding: 250px 0;
-  overflow: hidden;
 }
 
 /* Heading */
@@ -228,4 +227,21 @@ a {
   100% {
     opacity: 1;
   }
+}
+
+/* Glow */
+.glow {
+  --color: var(--color-secondary);
+  position: absolute;
+  width: 1500px;
+  height: 1500px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    var(--color),
+    transparent,
+    transparent
+  );
+  filter: blur(100px);
+  opacity: 0.5;
 }

@@ -159,6 +159,14 @@
 }
 
 /* About Section */
+.about {
+  position: relative;
+}
+.about .glow {
+  top: -500px;
+  right: -700px;
+  --color: var(--color-primary);
+}
 .about p {
   font-family: Good Sans Regular;
   font-size: 22px;
@@ -350,6 +358,19 @@
 }
 
 /* FAQ Section */
+.faq-section {
+  position: relative;
+}
+.faq-section .glow:nth-child(1) {
+  top: -100px;
+  left: -500px;
+  --color: var(--color-secondary);
+}
+.faq-section .glow:nth-child(2) {
+  top: 300px;
+  right: -700px;
+  --color: var(--color-primary);
+}
 .faq-section .accordion-item {
   border-radius: 10px;
   overflow: hidden;
