@@ -104,7 +104,7 @@ a {
   border-radius: 100px;
   font-family: Good Sans Black;
   font-size: 14px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   letter-spacing: 0.05em;
   text-align: center;
   text-decoration: none;
@@ -205,5 +205,27 @@ a {
   }
   100% {
     transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+@keyframes rotateGradient {
+  to {
+    background: linear-gradient(
+      405deg,
+      var(--color-primary),
+      var(--color-secondary),
+      var(--color-tertiary),
+      var(--color-primary)
+    );
+  }
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
