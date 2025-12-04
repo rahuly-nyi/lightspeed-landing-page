@@ -333,7 +333,7 @@
 }
 .footer .info-section {
   background-color: var(--color-dark);
-  padding: 100px 0;
+  padding: 50px 0;
 }
 .footer .info-section p {
   font-family: Good Sans Regular;
@@ -369,9 +369,6 @@
   background-color: var(--color-primary);
   border-color: var(--color-primary);
 }
-.footer .info-section .details {
-  text-align: right;
-}
 .footer .info-section .details img:first-child {
   width: 100%;
   max-width: 500px;
@@ -388,6 +385,11 @@
 }
 .footer .info-section .details p img {
   width: 130px;
+}
+.footer .info-section .text {
+  width: 100%;
+  max-width: 380px;
+  margin: 0 0 0 auto;
 }
 .footer .cta-section {
   padding: 150px 0;
@@ -473,7 +475,7 @@
   --color: var(--color-secondary);
 }
 .faq-section .glow:nth-child(2) {
-  top: 0;
+  top: -100px;
   right: -700px;
   --color: var(--color-primary);
 }
@@ -941,6 +943,9 @@
   }
   .steps-section .steps .item h6 {
     font-size: 14px;
+    position: absolute;
+    top: 15px;
+    left: 60px;
   }
   .steps-section .steps .item .icon-wrapper {
     width: 50px;
@@ -956,12 +961,30 @@
   }
   .steps-section .steps .item .text {
     width: 100%;
+    position: relative;
   }
   .steps-section .steps .item .text h5 {
     font-size: 18px;
   }
   .steps-section .steps .item .text p {
-    font-size: 18px;
+    font-size: 16px;
+  }
+  .steps-section .steps .item .text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 25px;
+    width: 1px;
+    height: 120%;
+    background: linear-gradient(
+      to bottom,
+      var(--color-secondary),
+      var(--color-primary)
+    );
+    opacity: 0.5;
+  }
+  .steps-section .steps .item:last-child .text::after {
+    display: none;
   }
   .faq-section .accordion-item .accordion-button {
     font-size: 18px;
@@ -983,5 +1006,11 @@
   }
   .glow {
     display: none;
+  }
+  .dot {
+    scale: 0.3;
+  }
+  .points-section .dot.dot-3 {
+    left: 0;
   }
 }
