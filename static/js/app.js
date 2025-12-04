@@ -14,10 +14,10 @@ AOS.init({
 // Initialize Stats
 function runDigitCounter({
   selector = ".stats .item span",
-  duration = 3,
+  duration = 5,
 } = {}) {
   document.querySelectorAll(selector).forEach((span) => {
-    const target = Number(span.textContent);
+    const target = Number(span.dataset.value);
     if (isNaN(target)) return;
 
     gsap.fromTo(
@@ -32,9 +32,13 @@ function runDigitCounter({
     );
   });
 }
-
-/* Run counter */
-runDigitCounter();
+gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.create({
+  trigger: ".stats",
+  start: "top 90%",
+  once: true,
+  onEnter: runDigitCounter,
+});
 
 // Gsap ScrollTrigger
 gsap.to(".step-1", {
