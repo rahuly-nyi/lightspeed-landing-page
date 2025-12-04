@@ -6,9 +6,10 @@ AOS.init({
   delay: 100,
   easing: "ease-in-out",
   anchorPlacement: "top-bottom",
-  anchorOn: "window",
-  anchorOnSelector: "body",
-  anchorOnSelector: "body",
+
+  disable: function () {
+    return window.innerWidth < 768;
+  },
 });
 
 // Initialize Stats

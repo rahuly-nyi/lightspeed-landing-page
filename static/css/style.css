@@ -4,6 +4,14 @@
 .navigation {
   background-color: var(--color-dark);
   padding: 20px 0;
+  position: relative;
+  z-index: 10;
+}
+.navigation .navbar-brand-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 .navigation .navbar-brand {
   width: 250px;
@@ -34,17 +42,17 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 1;
 }
 .hero .container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  text-align: center;
+  position: relative;
   z-index: 2;
+  text-align: center;
   padding: 50px 0;
 }
 .hero .title {
@@ -749,12 +757,158 @@
   color: var(--color-light);
 }
 
-/* Stacking */
-/* .steps {
-  position: relative;
+/* Responsive */
+@media (max-width: 1200px) {
+  .section {
+    padding: 150px 0;
+  }
+  .heading {
+    font-size: 35px;
+  }
+  .sub-heading {
+    font-size: 20px;
+  }
+  .points-section .card .card-body {
+    gap: 15px;
+    padding: 20px;
+  }
+  .points-section .card .card-body .icon {
+    width: 50px;
+    height: 50px;
+  }
+  .points-section .card .card-body .text h5 {
+    font-size: 18px;
+  }
+  .points-section .card .card-body .text h6 {
+    font-size: 20px;
+  }
+  .points-section .card .card-body .text p {
+    font-size: 18px;
+  }
 }
-.steps .item {
-  position: sticky;
-  top: 120px;
-  margin-bottom: 120px;
-} */
+@media (max-width: 768px) {
+  .section {
+    padding: 100px 0;
+  }
+  .heading {
+    font-size: 24px;
+    padding: 0 10px;
+  }
+  .sub-heading {
+    font-size: 18px;
+    padding: 0 10px;
+  }
+  .button {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+  .button-lg {
+    font-size: 14px;
+    padding: 7px 15px;
+  }
+  .navigation .navbar-brand {
+    width: 100px;
+  }
+  .hero .gradient-border-badge::before {
+    padding: 1px;
+  }
+  .hero .gradient-border-badge .content {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+  .hero .gradient-border-badge .content i {
+    width: 10px;
+    height: 10px;
+  }
+  .hero .gradient-border-badge .content span {
+    font-size: 12px;
+  }
+  .hero .title {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+  .hero .title p {
+    font-size: 18px;
+    gap: 5px;
+  }
+  .hero .title p img {
+    width: 150px;
+  }
+  .hero .sub-heading {
+    font-size: 18px;
+    padding: 0 10px;
+  }
+  .hero .stats {
+    gap: 5px;
+  }
+  .hero .stats .item span {
+    font-size: 20px;
+  }
+  .about p {
+    font-size: 18px;
+  }
+  .points-section .card .card-body {
+    padding: 20px;
+    gap: 15px;
+  }
+  .points-section .card .card-body .icon {
+    width: 30px;
+    height: 30px;
+  }
+  .points-section .card .card-body .text h5 {
+    font-size: 18px;
+  }
+  .points-section .card .card-body .text h6 {
+    font-size: 20px;
+  }
+  .points-section .card .card-body .text p {
+    font-size: 18px;
+  }
+  .steps-section .steps .item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .steps-section .steps .item h6 {
+    font-size: 14px;
+  }
+  .steps-section .steps .item .icon-wrapper {
+    width: 50px;
+    height: 50px;
+  }
+  .steps-section .steps .item .icon-wrapper .icon {
+    width: 45px;
+    height: 45px;
+  }
+  .steps-section .steps .item .icon-wrapper img {
+    width: 20px;
+    height: 20px;
+  }
+  .steps-section .steps .item .text {
+    width: 100%;
+  }
+  .steps-section .steps .item .text h5 {
+    font-size: 18px;
+  }
+  .steps-section .steps .item .text p {
+    font-size: 18px;
+  }
+  .faq-section .accordion-item .accordion-button {
+    font-size: 18px;
+  }
+  .faq-section .accordion-item .accordion-button::after {
+    font-size: 18px;
+  }
+  .faq-section .accordion-item .accordion-body p {
+    font-size: 18px;
+  }
+  .mb-10 {
+    margin-bottom: 50px;
+  }
+  .footer .scroller {
+    padding: 10px 0;
+  }
+  .footer .scroller .item h6 {
+    font-size: 18px;
+  }
+}

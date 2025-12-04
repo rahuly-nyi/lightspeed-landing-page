@@ -85,6 +85,10 @@ a {
 .mb-15 {
   margin-bottom: 150px;
 }
+main {
+  overflow-x: hidden;
+  width: 100%;
+}
 
 /* Button */
 .button {
@@ -131,6 +135,7 @@ a {
   position: relative;
   z-index: 1;
   padding: 250px 0;
+  width: 100%;
 }
 
 /* Heading */
