@@ -702,6 +702,7 @@
   flex-direction: column;
   justify-content: center;
   box-shadow: var(--box-shadow);
+  z-index: 1;
 }
 .steps-section .steps .item .text h5 {
   font-size: 20px;
