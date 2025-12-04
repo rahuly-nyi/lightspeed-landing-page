@@ -138,6 +138,13 @@ a {
   max-width: 1000px;
   margin: 0 auto;
 }
+.container-fluid {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
 
 /* Heading */
 .heading {

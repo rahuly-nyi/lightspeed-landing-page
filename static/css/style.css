@@ -172,10 +172,6 @@
 /* About Section */
 .about {
   position: relative;
-  /* min-height: 100vh; */
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
 }
 .about .dot.dot-1 {
   top: 200px;
@@ -195,6 +191,12 @@
   top: -500px;
   right: -700px;
   --color: var(--color-primary);
+}
+.about .heading {
+  text-align: justify !important;
+}
+.about .text {
+  padding-top: 30px;
 }
 .about p {
   font-family: Good Sans Regular;
@@ -278,6 +280,7 @@
   object-position: bottom;
   position: relative;
   z-index: 2;
+  margin: 0;
 }
 .about .image-wrapper img {
   width: 150px;
@@ -650,6 +653,24 @@
 .steps-section .steps .item .icon-wrapper:hover::before {
   opacity: 0.5;
 }
+.steps-section .steps .item .icon-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 120%;
+  background: linear-gradient(
+    to bottom,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  opacity: 0.5;
+}
+.steps-section .steps .item:last-child .icon-wrapper:after {
+  display: none;
+}
 .steps-section .steps .item .icon {
   width: 76px;
   height: 76px;
@@ -768,7 +789,7 @@
   font-size: 18px;
   font-family: Good Sans Regular;
   color: var(--color-light);
-  margin-bottom: 15px;
+  margin-bottom: 7px;
 }
 .points-section .card .card-body .text h6 {
   font-size: 22px;
@@ -788,7 +809,7 @@
     padding: 150px 0;
   }
   .heading {
-    font-size: 35px;
+    font-size: 30px;
   }
   .sub-heading {
     font-size: 20px;
@@ -809,6 +830,11 @@
   }
   .points-section .card .card-body .text p {
     font-size: 18px;
+  }
+}
+@media (max-width: 920px) {
+  .heading {
+    font-size: 24px;
   }
 }
 @media (max-width: 768px) {
