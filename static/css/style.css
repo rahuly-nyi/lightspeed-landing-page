@@ -806,6 +806,81 @@
   font-family: Good Sans Light;
   color: var(--color-light);
 }
+.points-section .nav-pills .nav-link {
+  background: #363636;
+  padding: 2px;
+  border-radius: 10px;
+  color: var(--color-light);
+  font-family: Good Sans Regular;
+  font-size: 18px;
+  text-shadow: var(--text-shadow);
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  min-width: 300px;
+}
+.points-section .nav-pills .nav-link.active {
+  background: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+}
+.points-section .nav-pills .nav-link .wrapper {
+  position: relative;
+  background: var(--color-dark);
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.5s ease;
+}
+.points-section .nav-pills .nav-link.active .wrapper {
+  background: transparent;
+}
+.points-section .nav-pills .nav-link .wrapper .icon {
+  width: 40px;
+  height: 40px;
+  background-color: #363636;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease;
+}
+.points-section .nav-pills .nav-link.active .wrapper .icon {
+  background: var(--color-secondary);
+}
+.points-section .nav-pills .nav-link .wrapper .icon i {
+  font-size: 24px;
+  color: var(--color-light);
+}
+.points-section .nav-pills .nav-link .wrapper .text {
+  flex: 1;
+  border-radius: 10px;
+  text-align: left;
+}
+.points-section .nav-pills .nav-link .wrapper .text h5 {
+  font-size: 18px;
+  font-family: Good Sans Bold;
+  color: var(--color-secondary);
+  margin-bottom: 0;
+  text-shadow: var(--text-shadow);
+  transition: all 0.5s ease;
+}
+.points-section .nav-pills .nav-link.active .wrapper .text h5 {
+  color: var(--color-light);
+}
+.points-section .nav-pills .nav-link .wrapper .text b {
+  font-size: 14px;
+  font-family: Good Sans Regular;
+  color: var(--color-light);
+  opacity: 0.8;
+  text-shadow: var(--text-shadow);
+}
 
 /* Responsive */
 @media (max-width: 1200px) {
