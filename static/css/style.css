@@ -961,6 +961,7 @@
   }
   .steps-section .steps .item .text {
     width: 100%;
+    height: 200px;
     position: relative;
   }
   .steps-section .steps .item .text h5 {
