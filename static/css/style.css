@@ -290,7 +290,7 @@
 /* Footer Section */
 .footer .scroller {
   width: 100%;
-  padding: 15px 0;
+  padding: 10px 0;
   margin: auto;
   position: relative;
   display: grid;
@@ -304,11 +304,11 @@
 }
 .footer .scroller .track {
   display: flex;
-  width: calc(400px * 12);
+  width: calc(370px * 12);
   animation: scroll 50s linear infinite;
 }
 .footer .scroller .item {
-  width: 400px;
+  width: 370px;
   overflow: hidden;
   perspective: 100px;
   cursor: default;
@@ -329,6 +329,7 @@
   text-align: center;
   color: var(--color-light);
   text-shadow: var(--text-shadow);
+  margin-bottom: 0;
 }
 .footer .info-section {
   background-color: var(--color-dark);
