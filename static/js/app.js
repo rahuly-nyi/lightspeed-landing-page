@@ -42,47 +42,59 @@ ScrollTrigger.create({
 });
 
 // Gsap ScrollTrigger
-gsap.to(".step-1", {
-  y: 100,
-  opacity: 0,
-  scrollTrigger: {
-    trigger: ".step-1",
-    start: "top 15%",
-    end: "bottom 15%",
-    markers: false,
-    scrub: true,
-  },
-});
-gsap.to(".step-2", {
-  y: 100,
-  opacity: 0,
-  scrollTrigger: {
-    trigger: ".step-2",
-    start: "top 15%",
-    end: "bottom 15%",
-    markers: false,
-    scrub: true,
-  },
-});
-gsap.to(".step-3", {
-  y: 100,
-  opacity: 0,
-  scrollTrigger: {
-    trigger: ".step-3",
-    start: "top 15%",
-    end: "bottom 15%",
-    markers: false,
-    scrub: true,
-  },
-});
-gsap.to(".step-4", {
-  scale: 0.7,
-  opacity: 0,
-  scrollTrigger: {
-    trigger: ".step-4",
-    start: "top 15%",
-    end: "bottom 15%",
-    markers: false,
-    scrub: true,
-  },
+window.addEventListener("load", () => {
+  gsap.to(".step-1", {
+    y: 100,
+    opacity: 0,
+    scrollTrigger: {
+      trigger: ".step-1",
+      start: "top 15%",
+      end: "bottom 15%",
+      scrub: true,
+      markers: false,
+      invalidateOnRefresh: true,
+    },
+  });
+
+  gsap.to(".step-2", {
+    y: 100,
+    opacity: 0,
+    scrollTrigger: {
+      trigger: ".step-2",
+      start: "top 15%",
+      end: "bottom 15%",
+      scrub: true,
+      markers: false,
+      invalidateOnRefresh: true,
+    },
+  });
+
+  gsap.to(".step-3", {
+    y: 100,
+    opacity: 0,
+    scrollTrigger: {
+      trigger: ".step-3",
+      start: "top 15%",
+      end: "bottom 15%",
+      scrub: true,
+      markers: false,
+      invalidateOnRefresh: true,
+    },
+  });
+
+  gsap.to(".step-4", {
+    scale: 0.7,
+    opacity: 0,
+    scrollTrigger: {
+      trigger: ".step-4",
+      start: "top 15%",
+      end: "bottom 15%",
+      scrub: true,
+      markers: false,
+      invalidateOnRefresh: true,
+    },
+  });
+
+  // Recalculate positions after everything has loaded
+  ScrollTrigger.refresh();
 });
