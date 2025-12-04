@@ -89,6 +89,10 @@ main {
   overflow-x: hidden;
   width: 100%;
 }
+.container {
+  position: relative;
+  z-index: 1;
+}
 
 /* Button */
 .button {

@@ -53,7 +53,7 @@
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: 50px 0;
+  padding: 100px 0;
 }
 .hero .title {
   position: relative;
@@ -378,6 +378,9 @@
 .footer .info-section .details p img {
   width: 130px;
 }
+.footer .cta-section {
+  padding: 150px 0;
+}
 .footer .cta-section .dot:nth-child(1) {
   bottom: 100px;
   left: 100px;
@@ -468,11 +471,7 @@
   overflow: hidden;
   outline: none;
   border: 0;
-  background: linear-gradient(
-    to right,
-    var(--color-secondary),
-    var(--color-primary)
-  );
+  background: var(--color-dark);
   padding: 2px;
 }
 .faq-section .accordion-item .accordion-button {
@@ -484,12 +483,25 @@
   border: 0;
   outline: none;
   box-shadow: none;
-  border-radius: 10px;
   padding: 20px 20px;
+  border-radius: 10px 10px 0 0;
+  transition: none;
+}
+.faq-section .accordion-item .accordion-button.collapsed {
+  border-radius: 10px;
+  transition: none;
 }
 .faq-section .accordion-item-wrapper {
   margin-bottom: 30px;
   position: relative;
+  padding: 2px;
+  transition: all 0.5s ease;
+  background: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  border-radius: 10px;
 }
 .faq-section .accordion-item-wrapper::before {
   content: "";
@@ -537,8 +549,13 @@
 .faq-section .accordion-button:not(.collapsed)::before {
   transform: rotate(-135deg);
 }
+.faq-section .accordion-body {
+  background-color: var(--color-dark);
+  border-radius: 0 0 10px 10px;
+}
 .faq-section .accordion-body p {
   font-size: 20px;
+  color: var(--color-light);
 }
 
 /* Steps Section */
