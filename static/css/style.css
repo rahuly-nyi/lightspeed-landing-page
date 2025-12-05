@@ -284,15 +284,27 @@
 }
 .about .image-wrapper img {
   width: 150px;
-  margin: 0 auto 0;
+  margin: 15px auto 0;
 }
 .about .image-wrapper .quote {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 4px);
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
   font-family: Good Sans Regular;
   font-size: 12px;
   color: var(--color-light);
   text-shadow: var(--text-shadow);
-  text-decoration: underline;
-  margin-top: 10px;
+  background: #000000b6;
+  padding: 5px 0;
+  border-radius: 10px;
+  margin: 0;
 }
 
 /* Footer Section */
@@ -1000,6 +1012,13 @@
   }
   .about p {
     font-size: 18px;
+  }
+  .about .image-wrapper img {
+    width: 100px;
+    margin: 10px auto 0;
+  }
+  .about .image-wrapper .quote {
+    font-size: 10px;
   }
   .points-section .card .card-body {
     padding: 20px;
