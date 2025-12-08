@@ -12,6 +12,121 @@ AOS.init({
   },
 });
 
+// Scroll to top on page load
+class ScrollToTopManager {
+  constructor(options = {}) {
+    this.options = {
+      behavior: "instant", // 'instant', 'smooth', or 'auto'
+      forceTop: true, // Always enforce top scroll
+      useHistoryAPI: true, // Use history.scrollRestoration
+      debug: false, // Log debug messages
+      ...options,
+    };
+
+    this.init();
+  }
+
+  init() {
+    // Disable browser's scroll restoration if enabled
+    if (this.options.useHistoryAPI && "scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+      this.log("Browser scroll restoration disabled");
+    }
+
+    // Set up all event listeners
+    this.setupEventListeners();
+
+    // Initial scroll to top
+    this.scrollToTop();
+
+    this.log("ScrollToTopManager initialized");
+  }
+
+  setupEventListeners() {
+    // On page load
+    window.addEventListener("load", () => {
+      this.scrollToTop();
+    });
+
+    // When page is shown (including from cache)
+    window.addEventListener("pageshow", (event) => {
+      if (event.persisted || this.options.forceTop) {
+        setTimeout(() => this.scrollToTop(), 10);
+      }
+    });
+
+    // Before page unload (optional cleanup)
+    window.addEventListener("beforeunload", () => {
+      if (this.options.forceTop) {
+        window.scrollTo(0, 0);
+      }
+    });
+
+    // DOMContentLoaded as additional safety
+    document.addEventListener("DOMContentLoaded", () => {
+      this.scrollToTop();
+    });
+  }
+
+  scrollToTop() {
+    try {
+      if (this.options.behavior === "instant") {
+        // For instant scroll, use scrollTo(0, 0)
+        window.scrollTo(0, 0);
+
+        // Also try scrollTo with options as fallback
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "auto",
+        });
+      } else {
+        // For smooth or auto behavior
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: this.options.behavior,
+        });
+      }
+
+      // Additional fallback
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+
+      this.log("Scrolled to top");
+    } catch (error) {
+      console.warn("Scroll to top failed:", error);
+    }
+  }
+
+  log(message) {
+    if (this.options.debug) {
+      console.log(`[ScrollToTop] ${message}`);
+    }
+  }
+
+  // Public method to manually trigger
+  forceScrollToTop() {
+    this.scrollToTop();
+  }
+
+  // Public method to disable
+  disable() {
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "auto";
+    }
+    this.log("ScrollToTopManager disabled");
+  }
+}
+
+// Usage:
+// const scrollManager = new ScrollToTopManager();
+// or with options:
+const scrollManager = new ScrollToTopManager({
+  behavior: "instant", // 'smooth' for smooth scrolling
+  debug: false,
+});
+
 // Gsap ScrollTrigger
 window.addEventListener("load", () => {
   gsap.to(".step-1", {
