@@ -173,6 +173,9 @@
 .about {
   position: relative;
 }
+.about .mobile-display {
+  display: none;
+}
 .about .dot.dot-1 {
   top: 200px;
   right: 50px;
@@ -308,11 +311,12 @@
 }
 .about .image-wrapper .quote {
   font-family: Good Sans Regular;
-  font-size: 12px;
+  font-size: 13px;
+  line-height: 150%;
   color: var(--color-light);
   text-shadow: var(--text-shadow);
   text-align: center;
-  margin: 10px 0 0;
+  margin: 7px 0 0;
 }
 
 /* Footer Section */
@@ -1005,12 +1009,20 @@
   .hero .stats .item span {
     font-size: 20px;
   }
+
+  .about .mobile-display {
+    display: block;
+  }
   .about .heading {
+    font-size: 14px;
     text-align: center !important;
   }
   .about .row.g-5,
   .about .row.gx-5 {
     --bs-gutter-x: 30px !important;
+  }
+  .about .row.g-5.justify-content-center {
+    justify-content: top !important;
   }
   .about .image-wrapper::after {
     top: 15px;
