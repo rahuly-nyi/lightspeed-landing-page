@@ -174,13 +174,18 @@
   padding-top: 200px;
   position: relative;
 }
-.about .partners-wrapper {
-  position: relative;
-  z-index: 2;
+.about .partners-section {
   position: absolute;
+  z-index: 2;
   top: -70px;
   left: 50%;
   transform: translateX(-50%);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about .partners-wrapper {
   width: 90%;
   max-width: 1000px;
   border-radius: 10px;
