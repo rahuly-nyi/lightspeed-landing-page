@@ -225,6 +225,12 @@
   object-fit: contain;
   object-position: center;
 }
+.about .partners .logos img:nth-child(1) {
+  height: 20px;
+}
+.about .partners .logos img:nth-child(5) {
+  height: 30px;
+}
 .about .mobile-display {
   display: none;
 }
@@ -1087,11 +1093,13 @@
   .about .partners .logos img {
     height: 20px;
   }
+  .about .partners .logos img:nth-child(5) {
+    height: 25px;
+  }
   .about .mobile-display {
     display: block;
   }
   .about .heading {
-    font-size: 14px;
     text-align: center !important;
   }
   .about .row.g-5,
@@ -1111,7 +1119,7 @@
     font-size: 18px;
   }
   .about .image-wrapper .quote {
-    font-size: 10px;
+    font-size: 12px;
   }
   .points-section .card .card-body {
     padding: 20px;
