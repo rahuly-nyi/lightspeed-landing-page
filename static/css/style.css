@@ -171,7 +171,54 @@
 
 /* About Section */
 .about {
+  padding-top: 200px;
   position: relative;
+}
+.about .partners-wrapper {
+  position: relative;
+  z-index: 2;
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1000px;
+  border-radius: 10px;
+  padding: 2px;
+  background: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  overflow: hidden;
+}
+.about .partners {
+  border-radius: 10px;
+  background: var(--color-dark);
+  padding: 30px 50px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.about .partners h5 {
+  font-family: Good Sans bold;
+  font-size: 18px;
+  color: var(--color-tertiary);
+  margin-bottom: 30px;
+}
+.about .partners .logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+.about .partners .logos img {
+  height: 27px;
+  object-fit: contain;
+  object-position: center;
 }
 .about .mobile-display {
   display: none;
@@ -924,6 +971,15 @@
   .sub-heading {
     font-size: 20px;
   }
+  .about {
+    padding-top: 200px;
+  }
+  .about .partners .logos {
+    gap: 30px;
+  }
+  .about .partners .logos img {
+    height: 25px;
+  }
   .points-section .card .card-body {
     gap: 15px;
     padding: 20px;
@@ -1009,7 +1065,23 @@
   .hero .stats .item span {
     font-size: 20px;
   }
-
+  .about {
+    padding-top: 150px;
+  }
+  .about .partners {
+    padding: 10px 20px;
+  }
+  .about .partners h5 {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .about .partners .logos {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .about .partners .logos img {
+    height: 20px;
+  }
   .about .mobile-display {
     display: block;
   }
