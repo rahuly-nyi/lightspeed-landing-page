@@ -215,7 +215,7 @@
 }
 .about .partners .logos {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   flex-wrap: wrap;
   gap: 50px;
@@ -227,6 +227,9 @@
 }
 .about .partners .logos img:nth-child(1) {
   height: 20px;
+}
+.about .partners .logos img:nth-child(2) {
+  height: 25px;
 }
 .about .partners .logos img:nth-child(5) {
   height: 30px;
@@ -1087,10 +1090,13 @@
     margin-bottom: 20px;
   }
   .about .partners .logos {
-    gap: 20px;
+    gap: 25px;
     flex-wrap: wrap;
   }
   .about .partners .logos img {
+    height: 20px;
+  }
+  .about .partners .logos img:nth-child(2) {
     height: 20px;
   }
   .about .partners .logos img:nth-child(5) {
