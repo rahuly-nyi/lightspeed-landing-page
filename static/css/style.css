@@ -557,6 +557,7 @@
 }
 .footer .community-partners {
   position: relative;
+  padding: 150px 0 170px;
 }
 .footer .community-partners .logos {
   display: flex;
@@ -662,12 +663,22 @@
   --animation: float;
 }
 .faq-section .glow:nth-child(1) {
-  top: -200px;
+  top: -400px;
   left: -500px;
   --color: var(--color-secondary);
 }
 .faq-section .glow:nth-child(2) {
-  top: -100px;
+  top: -300px;
+  right: -700px;
+  --color: var(--color-primary);
+}
+.faq-section .glow:nth-child(3) {
+  top: 300px;
+  left: -500px;
+  --color: var(--color-secondary);
+}
+.faq-section .glow:nth-child(4) {
+  top: 400px;
   right: -700px;
   --color: var(--color-primary);
 }
