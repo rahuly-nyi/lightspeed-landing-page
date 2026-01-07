@@ -186,42 +186,143 @@ window.addEventListener("load", () => {
 });
 
 // Counter Configuration
-// ! With date-based counter
+// With date-based counter
+const counterConfig = () => {
+  // ================== CONFIG ==================
+  const START_AT = 5211;
+  const END_AT = 5237;
+
+  // Timeline (IST / Asia-Kolkata)
+  const START_DATE = new Date("2026-01-07T00:00:00+05:30");
+  const END_DATE = new Date("2026-01-12T23:59:59+05:30");
+
+  // ⏱ Daily increments (random between 3 to 5)
+  const MIN_DAILY_INC = 3;
+  const MAX_DAILY_INC = 5;
+
+  // ================== UTIL: SEEDED RANDOM (STABLE) ==================
+  function seededRandom(seed) {
+    const x = Math.sin(seed) * 10000;
+    return x - Math.floor(x);
+  }
+
+  // ================== DAILY INCREMENT (STABLE PER DAY) ==================
+  function getDailyIncrement(dayIndex) {
+    const rand = seededRandom(dayIndex + 5211); // Use the day index and offset for randomization
+    return (
+      MIN_DAILY_INC + Math.floor(rand * (MAX_DAILY_INC - MIN_DAILY_INC + 1))
+    );
+  }
+
+  // ================== DATE-BASED COUNTER ==================
+  function getApplicationsCount(now = new Date()) {
+    if (now <= START_DATE) return START_AT;
+
+    let total = START_AT;
+    const elapsedMs = now - START_DATE;
+    const totalDays = Math.floor(elapsedMs / (24 * 60 * 60 * 1000)); // calculate total number of days since start date
+
+    for (let day = 0; day < totalDays; day++) {
+      const dailyInc = getDailyIncrement(day);
+      total += dailyInc;
+
+      // Hard cap at 5237
+      if (total >= END_AT) {
+        return END_AT;
+      }
+    }
+
+    // If it has passed the end date or reached the max value
+    if (now >= END_DATE || total >= END_AT) return END_AT;
+
+    return total;
+  }
+
+  // ================== SET DIGITS ==================
+  function setCounterDigits(value) {
+    const digits = value.toString().padStart(4, "0").split("");
+    const spans = document.querySelectorAll(".stats .item span");
+
+    spans.forEach((span, index) => {
+      span.dataset.value = digits[index] || "0";
+      span.innerText = "0";
+    });
+  }
+
+  // ================== GSAP DIGIT ANIMATION ==================
+  function runDigitCounter({
+    selector = ".stats .item span",
+    duration = 4,
+  } = {}) {
+    document.querySelectorAll(selector).forEach((span) => {
+      const target = Number(span.dataset.value);
+      if (isNaN(target)) return;
+
+      gsap.fromTo(
+        span,
+        { innerText: 0 },
+        {
+          innerText: target,
+          duration,
+          ease: "power3.out",
+          snap: { innerText: 1 },
+        }
+      );
+    });
+  }
+
+  // ================== INIT ==================
+  const currentApplications = getApplicationsCount();
+  setCounterDigits(currentApplications);
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  ScrollTrigger.create({
+    trigger: ".stats",
+    start: "top 90%",
+    once: true,
+    onEnter: () => runDigitCounter(),
+  });
+};
+
 // const counterConfig = () => {
-//   const START_AT = 184;
-//   const END_AT = 7000;
+//   // 🔗 1. PUBLISH your sheet to the web as CSV and paste that URL here
+//   // File → Share → Publish to web → select the correct sheet → CSV
+//   const SHEET_CSV_URL =
+//     "https://docs.google.com/spreadsheets/d/e/2PACX-1vSAUvjKAYluANYT8wtx5rWnWPPuA_1-9dfVnq5xQWmF1XatWK7TqdP3-IPNYkcZ2uTe88nnJ1r7oDQk/pub?gid=1648361970&single=true&output=csv";
 
-//   // Use your real start/end here (IST / Asia-Kolkata implied)
-//   const START_DATE = new Date("2025-12-05T00:00:00+05:30");
-//   const END_DATE = new Date("2026-01-12T23:59:59+05:30");
+//   // How many header rows at the top of the sheet (usually 1)
+//   const HEADER_ROWS = 1;
 
-//   // How often the "virtual" counter ticks
-//   const SLOT_MINUTES = 30; // change to 30 if you want half-hour steps
+//   // Optional: if you want to add an offset (e.g. started somewhere else)
+//   const BASE_OFFSET = 0; // e.g. 100 if you want “100 + actual submissions”
 
-//   // ------------ DATE-BASED VALUE CALC ------------
-//   function getApplicationsCount(now = new Date()) {
-//     if (now <= START_DATE) return START_AT;
-//     if (now >= END_DATE) return END_AT;
+//   // ------------ GET COUNT FROM GOOGLE SHEET ------------
+//   async function getSubmissionCountFromSheet() {
+//     try {
+//       const res = await fetch(SHEET_CSV_URL);
+//       if (!res.ok) throw new Error("Network error fetching sheet");
 
-//     const totalMs = END_DATE - START_DATE;
-//     const slotMs = SLOT_MINUTES * 60 * 1000;
-//     const totalSlots = Math.floor(totalMs / slotMs);
+//       const csvText = await res.text();
 
-//     const totalIncrements = END_AT - START_AT;
-//     const incrementsPerSlot = totalIncrements / totalSlots; // ~7.3 per hour
+//       // Split CSV by line; each line is one row
+//       const rows = csvText.trim().split(/\r?\n/);
 
-//     const elapsedMs = now - START_DATE;
-//     const slotsPassed = Math.floor(elapsedMs / slotMs);
+//       // Subtract header row(s)
+//       const dataRowCount = Math.max(rows.length - HEADER_ROWS, 0);
 
-//     let value = START_AT + Math.floor(slotsPassed * incrementsPerSlot);
-//     if (value > END_AT) value = END_AT;
+//       return BASE_OFFSET + dataRowCount;
+//     } catch (err) {
+//       console.error("Error getting submission count from sheet:", err);
 
-//     return value;
+//       // Fallback if something breaks
+//       return BASE_OFFSET;
+//     }
 //   }
 
 //   // ------------ SET DIGITS INTO SPANS ------------
 //   function setCounterDigits(value) {
-//     // 4-digit padded string: 84 → "0084"
+//     // Pad to 4 digits: 84 → "0084"
 //     const digits = value.toString().padStart(4, "0").split("");
 
 //     const spans = document.querySelectorAll(".stats .item span");
@@ -232,36 +333,10 @@ window.addEventListener("load", () => {
 //     });
 //   }
 
-//   // function setCounterDigits(value) {
-//   //   const items = document.querySelectorAll(".stats .item");
-//   //   const spans = document.querySelectorAll(".stats .item span");
-
-//   //   // Is this a 4-digit value?
-//   //   const isFourDigit = value >= 1000;
-
-//   //   // Toggle the FIRST box
-//   //   if (items[0]) {
-//   //     if (isFourDigit) {
-//   //       items[0].classList.remove("d-none"); // show when 4 digits
-//   //     } else {
-//   //       items[0].classList.add("d-none"); // hide when < 1000
-//   //     }
-//   //   }
-
-//   //   // 4-digit padded string: 84 → "0084"
-//   //   const digits = value.toString().padStart(4, "0").split("");
-
-//   //   spans.forEach((span, index) => {
-//   //     const digit = digits[index] || "0";
-//   //     span.dataset.value = digit; // GSAP animates to this
-//   //     span.innerText = "0"; // reset so animation always starts from 0
-//   //   });
-//   // }
-
 //   // ------------ GSAP COUNTER ANIMATION ------------
 //   function runDigitCounter({
 //     selector = ".stats .item span",
-//     duration = 5, // shorter looks snappier
+//     duration = 3, // shorter looks snappier
 //   } = {}) {
 //     document.querySelectorAll(selector).forEach((span) => {
 //       const target = Number(span.dataset.value);
@@ -281,103 +356,20 @@ window.addEventListener("load", () => {
 //   }
 
 //   // ------------ INITIALISE ON LOAD ------------
-//   const currentApplications = getApplicationsCount(); // date-based, monotonic
-//   setCounterDigits(currentApplications); // fills in the 4 digits
+//   async function initCounter() {
+//     const currentCount = await getSubmissionCountFromSheet(); // real submissions
+//     setCounterDigits(currentCount); // fill digits based on sheet
 
-//   gsap.registerPlugin(ScrollTrigger);
+//     gsap.registerPlugin(ScrollTrigger);
 
-//   ScrollTrigger.create({
-//     trigger: ".stats",
-//     start: "top 90%",
-//     once: true,
-//     onEnter: () => runDigitCounter(),
-//   });
+//     ScrollTrigger.create({
+//       trigger: ".stats",
+//       start: "top 90%",
+//       once: true,
+//       onEnter: () => runDigitCounter(),
+//     });
+//   }
+
+//   initCounter();
 // };
-const counterConfig = () => {
-  // 🔗 1. PUBLISH your sheet to the web as CSV and paste that URL here
-  // File → Share → Publish to web → select the correct sheet → CSV
-  const SHEET_CSV_URL =
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSAUvjKAYluANYT8wtx5rWnWPPuA_1-9dfVnq5xQWmF1XatWK7TqdP3-IPNYkcZ2uTe88nnJ1r7oDQk/pub?gid=1648361970&single=true&output=csv";
-
-  // How many header rows at the top of the sheet (usually 1)
-  const HEADER_ROWS = 1;
-
-  // Optional: if you want to add an offset (e.g. started somewhere else)
-  const BASE_OFFSET = 0; // e.g. 100 if you want “100 + actual submissions”
-
-  // ------------ GET COUNT FROM GOOGLE SHEET ------------
-  async function getSubmissionCountFromSheet() {
-    try {
-      const res = await fetch(SHEET_CSV_URL);
-      if (!res.ok) throw new Error("Network error fetching sheet");
-
-      const csvText = await res.text();
-
-      // Split CSV by line; each line is one row
-      const rows = csvText.trim().split(/\r?\n/);
-
-      // Subtract header row(s)
-      const dataRowCount = Math.max(rows.length - HEADER_ROWS, 0);
-
-      return BASE_OFFSET + dataRowCount;
-    } catch (err) {
-      console.error("Error getting submission count from sheet:", err);
-
-      // Fallback if something breaks
-      return BASE_OFFSET;
-    }
-  }
-
-  // ------------ SET DIGITS INTO SPANS ------------
-  function setCounterDigits(value) {
-    // Pad to 4 digits: 84 → "0084"
-    const digits = value.toString().padStart(4, "0").split("");
-
-    const spans = document.querySelectorAll(".stats .item span");
-    spans.forEach((span, index) => {
-      const digit = digits[index] || "0";
-      span.dataset.value = digit; // this is what GSAP will animate to
-      span.innerText = "0"; // reset so animation always starts from 0
-    });
-  }
-
-  // ------------ GSAP COUNTER ANIMATION ------------
-  function runDigitCounter({
-    selector = ".stats .item span",
-    duration = 3, // shorter looks snappier
-  } = {}) {
-    document.querySelectorAll(selector).forEach((span) => {
-      const target = Number(span.dataset.value);
-      if (isNaN(target)) return;
-
-      gsap.fromTo(
-        span,
-        { innerText: 0 },
-        {
-          innerText: target,
-          duration,
-          ease: "power3.out",
-          snap: { innerText: 1 },
-        }
-      );
-    });
-  }
-
-  // ------------ INITIALISE ON LOAD ------------
-  async function initCounter() {
-    const currentCount = await getSubmissionCountFromSheet(); // real submissions
-    setCounterDigits(currentCount); // fill digits based on sheet
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    ScrollTrigger.create({
-      trigger: ".stats",
-      start: "top 90%",
-      once: true,
-      onEnter: () => runDigitCounter(),
-    });
-  }
-
-  initCounter();
-};
 counterConfig();
