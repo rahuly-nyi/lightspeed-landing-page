@@ -246,11 +246,11 @@
 .about .partners .logos img:nth-child(1) {
   height: 20px;
 }
-/* .about .partners .logos img:nth-child(2) {
-  height: 25px;
-} */
-.about .partners .logos img:nth-child(4) {
+.about .partners .logos img:nth-child(3) {
   height: 30px;
+}
+.about .partners .logos img:nth-child(5) {
+  height: 25px;
 }
 .about .mobile-display {
   display: none;
