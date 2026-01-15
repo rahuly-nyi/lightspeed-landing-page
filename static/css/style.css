@@ -218,13 +218,14 @@
   width: 100%;
 }
 .about .partners .items {
-  min-width: 330px;
+  min-width: 320px;
+  min-height: 162px;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
   border-left: 1px solid #aeaeae;
-  padding: 10px 25px;
+  padding: 10px 25px 10px 30px;
   align-self: flex-start;
 }
 .about .partners h5 {
@@ -236,9 +237,6 @@
 }
 .about .partners .items:first-of-type {
   flex-direction: column;
-}
-.about .partners .items:last-of-type {
-  padding-left: 30px;
 }
 .about .partners .logos {
   display: flex;
