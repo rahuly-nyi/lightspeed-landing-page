@@ -1253,6 +1253,11 @@
     max-width: calc(33.333% - 15px);
     text-align: center;
   }
+  .about .partners .logos.logos-column {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
   .about .partners .logos.logos-column img:nth-child(1) {
     height: 12px;
   }
