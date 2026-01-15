@@ -203,7 +203,7 @@
   padding: 30px 20px;
   text-align: center;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   width: 100%;
 }
@@ -224,6 +224,7 @@
   flex-direction: column;
   border-left: 1px solid #aeaeae;
   padding: 10px 25px;
+  align-self: flex-start;
 }
 .about .partners h5 {
   font-family: Good Sans bold;
