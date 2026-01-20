@@ -171,7 +171,7 @@
 
 /* About Section */
 .about {
-  padding-top: 250px;
+  padding-top: 350px;
   position: relative;
 }
 .about .partners-section {
@@ -607,6 +607,9 @@
 }
 .footer .community-partners .logos .logo img {
   width: 90%;
+}
+.footer .community-partners .logos .logo:last-child img {
+  width: 70%;
 }
 .footer .community-partners .dot:nth-child(1) {
   top: 100px;
