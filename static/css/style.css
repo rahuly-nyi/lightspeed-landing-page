@@ -1249,6 +1249,7 @@
     align-items: center;
     padding: 20px 0;
     border-left: 0;
+    border-right: 0;
     border-top: 1px solid #666666;
   }
   .about .partners .logos {
