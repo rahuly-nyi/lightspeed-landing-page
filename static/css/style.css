@@ -1263,7 +1263,7 @@
   .about .partners .logos img {
     height: 20px;
     flex: 0 0 calc(33.333% - 15px);
-    max-width: calc(33.333% - 15px);
+    /* max-width: calc(33.333% - 15px); */
     text-align: center;
   }
   .about .partners .logos.logos-column {
